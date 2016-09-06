@@ -73,8 +73,12 @@
     foreach ($cars as $car) {
         if ($car->worthBuyingPrice($_GET['price']) && $car->worthBuyingMiles($_GET['miles'])) {
             array_push($cars_matching_search, $car);
+        } elseif (empty($cars_matching_search)) {
+            echo "<h3>Your search did not match up</h3>";
+            return;
         }
     }
+
 ?>
 <!DOCTYPE html>
 <html>
