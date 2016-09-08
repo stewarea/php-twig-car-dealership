@@ -60,5 +60,15 @@
             return $this->miles < ($max_miles);
         }
 
+        function save()
+        {
+            array_push($_SESSION['car_list'], $this);
+        }
+
+        static function getAll ()
+        {
+                return $_SESSION['car_list'];
+        }
+
     }
 ?>

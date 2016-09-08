@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='httlis://maxcdn.bootstrap/cdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <title></title>
+</head>
+    <body>
+        <div class='container'>
+            <h1>Cars Matching Your Search</h1>
+            {% if results is not empty %}
+                {% for car in results %}
+                    <li>{{ car.getMake }}</li>
+                    <li>{{ car.getMiles }}</li>
+                    <li>{{ car.getPrice }}</li>
+                    <li>{{ car.getPicture }}</li>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </body>
+</html>
